@@ -1,0 +1,3 @@
+== Getting Started
+
+As a side fun project, I am going to create a reddit-like blog where people can post links to articles and comments associated with those articles.

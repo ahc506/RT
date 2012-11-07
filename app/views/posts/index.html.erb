@@ -1,0 +1,10 @@
+<ul>
+	<% @posts.each do |post| %>	
+		<li>			
+			<%= link_to post.title, post.url %> 
+		</br>
+			<%= link_to "#{post.comments.count} comments", post_path(post) %>
+		</li> 
+	<% end %>
+
+</ul>
