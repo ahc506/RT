@@ -1,0 +1,16 @@
+<h3> Submit a Link </h3>
+
+<%= form_for @post do |f| %> <!-- look at post object. If new object (never been saved, then system creates one. If existing, so post is from DB, we retrieve from DB, and posts here.  So we just need to update. it knows we are creating an object-->
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br/>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	<br/>
+	<%= f.submit "Submit a Link" %>   <!-- generate a submit a link button -->
+
+<% end %>
+
+<!--POST -> :index-->  <!-- To create object, we use HTTP verb, and post to the index page "/posts" (of the resource) -->
+
+<!-- RESTful design -->
