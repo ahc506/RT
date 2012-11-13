@@ -13,6 +13,8 @@
 	</ul>
 </p>
 
+
+
 <%= form_for [@post, @comment] do |f| %> <!-- nest comment under post-->
 <%= f.label :content %>
 <%= f.text_area :content, rows:5 %> <!-- rows:5 limits the size of box to 5 rows-->

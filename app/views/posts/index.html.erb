@@ -2,10 +2,24 @@
 
 <ul>
 	<% @posts.each do |post| %>	
-		<li>			
+		<li>
+			(<%= post.vote_number %>)
 			<%= link_to post.title, post.url %> 
-		</br>
-			<%= link_to "#{post.comments.count} comments", post_path(post) %>
+			(<%= link_to "#{post.comments.count} comments", post_path(post) %>)
+
+			<%= form_for [post, post.votes.build] do |f| %>            <!-- vote is linked to only that post. we also need a post ID because the route format is posts/post_id, so we include (post)-->
+				
+				<%= f.hidden_field :direction, value: "up" %>
+					<%= f.submit "Vote Up" %>
+      <% end %>
+
+			<%= form_for [post, post.votes.build] do |f| %>             
+				<%= f.hidden_field :direction, value: "down" %>
+					<%= f.submit "Vote Down" %>
+      <% end %> 
+
+		
+
 		</li> 
 	<% end %>
 

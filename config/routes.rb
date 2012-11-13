@@ -12,6 +12,7 @@ CourseProject::Application.routes.draw do
 										  # just an underscore _path to call (e.g., posts => posts_path; new_post = new_post_path)
 	
 		resources :comments, only: [:create]    #nested resource
+    resources :votes, only: [:create]       # create only since we dont need to modify votes
 	end
 
 	get 'my_form', to: 'forms#new'
